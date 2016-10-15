@@ -1,0 +1,13 @@
+extends ../layouts/default
+
+block append head
+    script(src="/js/mikesManualSignals.js")
+    script(src="//connect.facebook.net/en_US/sdk.js")
+
+block content
+  .container: .jumbotron
+    img(src='/images/logo.svg', width='160')
+    h1 Welcome
+    fb:login-button(scope="public_profile,email", onlogin="checkLoginState();")
+    div(id="status")
+
